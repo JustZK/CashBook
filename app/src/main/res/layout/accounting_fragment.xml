@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center|bottom"
+        app:layout_heightPercent="8%"
+        app:layout_widthPercent="100%">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape"
+            android:text="@string/add_budget"
+            android:textSize="@dimen/s"
+            app:layout_heightPercent="65%"
+            app:layout_widthPercent="30%" />
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="32%"
+        app:layout_widthPercent="100%"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.zhy.android.percent.support.PercentRelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="100%"
+            android:gravity="center|top">
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_heightPercent="55%"
+                app:layout_widthPercent="100%"
+                android:orientation="horizontal"
+                android:layout_alignParentTop="true">
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="100%"
+                    app:layout_widthPercent="50%"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/frame_right">
+
+                    <TextView
+                        android:paddingTop="15dp"
+                        android:paddingRight="20dp"
+                        android:gravity="center"
+                        android:text="本月收入"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:paddingRight="20dp"
+                        android:text="10086"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="@dimen/xl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="100%"
+                    app:layout_widthPercent="50%"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:paddingTop="15dp"
+                        android:paddingLeft="20dp"
+                        android:gravity="center"
+                        android:text="本月支出"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:paddingLeft="20dp"
+                        android:text="10010"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="@dimen/xl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </com.zhy.android.percent.support.PercentLinearLayout>
+
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <ImageView
+                android:background="@color/white"
+                android:id="@+id/accounting_write_iv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:srcCompat="@drawable/write"
+                app:layout_heightPercent="30%w"
+                app:layout_widthPercent="30%w"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+        </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.main.zk.cashbook.ui.PullRefreshListView
+        android:id="@+id/accounting_lv"
+        android:divider="@null"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="60%"
+        app:layout_widthPercent="90%">
+    </com.main.zk.cashbook.ui.PullRefreshListView>
+
+</com.zhy.android.percent.support.PercentLinearLayout>
