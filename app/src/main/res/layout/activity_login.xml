@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:background="@color/deep_blue"
+    tools:context="com.main.zk.cashbook.user.LoginActivity">
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="30%w"
+        app:layout_widthPercent="30%w"
+        app:srcCompat="@mipmap/logo" />
+
+    <EditText
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edt"
+        android:id="@+id/login_user"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="80%"
+        android:hint="@string/user_edt"/>
+
+    <EditText
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edt"
+        android:id="@+id/login_pwd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:inputType="numberPassword"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="80%"
+        android:hint="@string/pwd_edt"/>
+
+    <EditText
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edt"
+        android:id="@+id/login_pwd_again"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:inputType="numberPassword"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="80%"
+        android:visibility="visible"
+        android:hint="@string/pwd_again_edt"/>
+
+    <Button
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_btn"
+        android:id="@+id/login_true"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="80%"
+        android:text="@string/true_btn"/>
+
+</com.zhy.android.percent.support.PercentLinearLayout>
