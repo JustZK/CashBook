@@ -12,6 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class test {
 
     public void instablish(Context context){
+
         // 创建SQLiteOpenHelper子类对象
         MySQLiteOpenHelper dbHelper = new MySQLiteOpenHelper(context,"test_carson");
         //数据库实际上是没有被创建或者打开的，直到getWritableDatabase() 或者 getReadableDatabase() 方法中的一个被调用时才会进行创建或者打开
