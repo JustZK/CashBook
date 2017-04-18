@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.main.zk.cashbook.accounting.AccountingActivity">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%"
+        app:layout_widthPercent="100%">
+
+
+        <ImageButton
+            android:id="@+id/accounting_back_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/back"
+            app:layout_heightPercent="60%"
+            app:layout_widthPercent="60%h" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/daily_books"
+            android:textColor="@color/light_red"
+            android:textSize="@dimen/l"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="80%" />
+
+        <ImageButton
+            android:id="@+id/accounting_ok_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/save"
+            app:layout_heightPercent="60%"
+            app:layout_widthPercent="60%h" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%"
+        app:layout_widthPercent="100%">
+
+        <Button
+            android:id="@+id/accounting_expenditure_btn"
+            android:textColor="@color/light_grey"
+            android:text="@string/expenditure"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="70%"
+            app:layout_widthPercent="35%"
+            android:background="@drawable/shape_left"/>
+
+        <Button
+            android:id="@+id/accounting_income_btn"
+            android:textColor="@color/light_grey"
+            android:text="@string/income"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="70%"
+            app:layout_widthPercent="35%"
+            android:background="@drawable/shape_right"/>
+
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:background="@color/orange_red"
+        android:orientation="horizontal"
+        app:layout_heightPercent="12%"
+        app:layout_widthPercent="100%">
+
+        <TextView
+            android:id="@+id/accounting_expenditure_income_tv"
+            android:textColor="@color/white"
+            android:textSize="@dimen/xl"
+            android:text="@string/spend_money"
+            android:gravity="center|left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="40%" />
+
+        <EditText
+            android:id="@+id/accounting_expenditure_income_et"
+            android:textSize="@dimen/xxl"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:gravity="center|right"
+            android:hint="0.00"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@null"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="55%" />
+
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <GridView
+        android:id="@+id/accounting_gv"
+        android:numColumns="4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="60%"
+        app:layout_widthPercent="100%" />
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        app:layout_heightPercent="6%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="70%"
+            app:layout_widthPercent="10%"
+            android:src="@drawable/remarks"/>
+
+        <EditText
+            android:id="@+id/accounting_remarks_et"
+            android:paddingLeft="5dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@null"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="90%"
+            android:hint="@string/remarks"/>
+
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center|left"
+        android:paddingLeft="10dp"
+        app:layout_heightPercent="6%"
+        app:layout_widthPercent="100%">
+
+        <Button
+            android:id="@+id/accounting_account_btn"
+            android:text="@string/capital_account"
+            android:textSize="@dimen/m"
+            android:background="@drawable/shape"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="75%"
+            app:layout_widthPercent="25%"/>
+
+        <Button
+            android:id="@+id/accounting_lost_time_btn"
+            android:text="@string/lost_time"
+            android:textSize="@dimen/m"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="75%"
+            app:layout_widthPercent="25%"/>
+
+        <Button
+            android:id="@+id/accounting_member_btn"
+            android:text="@string/member"
+            android:textSize="@dimen/m"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="75%"
+            app:layout_widthPercent="25%"/>
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

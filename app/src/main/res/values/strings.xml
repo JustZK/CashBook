@@ -23,4 +23,13 @@
     <string name="add_budget">添加预算</string>
     <string name="accounting_item_income">+</string>
     <string name="accounting_item_expenditure">-</string>
+    <string name="daily_books">日常账本</string>
+    <string name="income">收入</string>
+    <string name="expenditure">支出</string>
+    <string name="make_money">赚钱</string>
+    <string name="spend_money">花钱</string>
+    <string name="remarks">备注</string>
+    <string name="capital_account">资金账户</string>
+    <string name="lost_time">流水时间</string>
+    <string name="member">成员</string>
 </resources>
