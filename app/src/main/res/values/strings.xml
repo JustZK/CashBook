@@ -32,4 +32,30 @@
     <string name="capital_account">资金账户</string>
     <string name="lost_time">流水时间</string>
     <string name="member">成员</string>
+
+    <string name="e_bill">话费</string>
+    <string name="e_diaper">尿布</string>
+    <string name="e_entertainment">娱乐</string>
+    <string name="e_film">电影</string>
+    <string name="e_gift">礼金</string>
+    <string name="e_home">家用</string>
+    <string name="e_housing">住房</string>
+    <string name="e_investment_loss">投资亏损</string>
+    <string name="e_milk_powder">奶粉</string>
+    <string name="e_nursery">育婴</string>
+    <string name="e_tobacco_tea">烟酒茶</string>
+    <string name="e_use_money">花钱</string>
+    <string name="e_water_coal">水电煤</string>
+    <string name="e_shopping">购物</string>
+    <string name="e_apparel">服饰</string>
+    <string name="e_beauty_makeup">护肤美妆</string>
+    <string name="e_snacks">零食</string>
+    <string name="e_fruit">水果</string>
+    <string name="e_buy_food">买菜</string>
+    <string name="e_daily_necessities">日用品</string>
+    <string name="e_red_envelopes">发红包</string>
+    <string name="e_traffic">交通</string>
+    <string name="e_food">餐饮</string>
+
+
 </resources>

@@ -11,4 +11,29 @@
     <color name="light_red">#f25d5d</color>
     <color name="orange_red">#f26e4a</color>
     <color name="light_grey">#AAAAAA</color>
+
+    <color name="e_bill">#465a9b</color>
+    <color name="e_diaper">#958a3c</color>
+    <color name="e_entertainment">#647ede</color>
+    <color name="e_film">#5f6cb9</color>
+    <color name="e_gift">#c62f2f</color>
+    <color name="e_home">#be7330</color>
+    <color name="e_housing">#b05c5c</color>
+    <color name="e_investment_loss">#408637</color>
+    <color name="e_milk_powder">#b4a81e</color>
+    <color name="e_nursery">#d96c4b</color>
+    <color name="e_tobacco_tea">#4f8ed5</color>
+    <color name="e_use_money">#f26d49</color>
+    <color name="e_water_coal">#a66e16</color>
+    <color name="e_shopping">#d56335</color>
+    <color name="e_apparel">#ff8b4c</color>
+    <color name="e_beauty_makeup">#de4266</color>
+    <color name="e_snacks">#d969ba</color>
+    <color name="e_fruit">#66b34a</color>
+    <color name="e_buy_food">#27a26f</color>
+    <color name="e_daily_necessities">#11a4d4</color>
+    <color name="e_red_envelopes">#d44f4f</color>
+    <color name="e_traffic">#83aa3f</color>
+    <color name="e_food">#ee9d29</color>
+
 </resources>

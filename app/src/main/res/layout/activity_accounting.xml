@@ -76,6 +76,7 @@
     </com.zhy.android.percent.support.PercentLinearLayout>
 
     <com.zhy.android.percent.support.PercentLinearLayout
+        android:id="@+id/accounting_expenditure_income_pll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"

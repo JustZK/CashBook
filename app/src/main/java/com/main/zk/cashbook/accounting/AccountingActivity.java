@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.main.zk.cashbook.R;
+import com.zhy.android.percent.support.PercentLinearLayout;
 
 import java.util.ArrayList;
 
@@ -20,9 +21,10 @@ public class AccountingActivity extends AppCompatActivity {
     private TextView accounting_expenditure_income_tv;
     private EditText accounting_expenditure_income_et, accounting_remarks_et;
     private GridView accounting_gv;
+    private PercentLinearLayout accounting_expenditure_income_pll;
     private AccountingActivityListAdapter adapter_expenditure;
     private ArrayList<AccountingActivityListInfo> list_expenditure;
-    private int old_position = -1;
+    private int old_position = 0;
 
 
     @Override
@@ -45,19 +47,30 @@ public class AccountingActivity extends AppCompatActivity {
         accounting_expenditure_income_et = (EditText)findViewById(R.id.accounting_expenditure_income_et);
         accounting_remarks_et = (EditText)findViewById(R.id.accounting_remarks_et);
         accounting_gv = (GridView)findViewById(R.id.accounting_gv);
+        accounting_expenditure_income_pll = (PercentLinearLayout)findViewById(R.id.accounting_expenditure_income_pll);
 
         list_expenditure = new ArrayList<>();
         adapter_expenditure = new AccountingActivityListAdapter(this, list_expenditure);
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_use_money, R.drawable.e_use_money_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_apparel, R.drawable.e_apparel_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_beauty_makeup, R.drawable.e_beauty_makeup_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_buy_food, R.drawable.e_buy_food_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_daily_necessities,R.drawable.e_daily_necessities_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_food, R.drawable.e_food_s,  false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_fruit, R.drawable.e_fruit_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_red_envelopes, R.drawable.e_red_envelopes_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_snacks, R.drawable.e_snacks_s, false));
-        list_expenditure.add(new AccountingActivityListInfo(R.drawable.e_traffic, R.drawable.e_traffic_s, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_use_money), R.drawable.e_use_money,
+                R.drawable.e_use_money_s, R.color.e_use_money, true));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_apparel), R.drawable.e_apparel,
+                R.drawable.e_apparel_s, R.color.e_apparel, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_beauty_makeup), R.drawable.e_beauty_makeup,
+                R.drawable.e_beauty_makeup_s, R.color.e_beauty_makeup, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_buy_food), R.drawable.e_buy_food,
+                R.drawable.e_buy_food_s, R.color.e_buy_food, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_daily_necessities),
+                R.drawable.e_daily_necessities, R.drawable.e_daily_necessities_s, R.color.e_daily_necessities, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_food), R.drawable.e_food,
+                R.drawable.e_food_s, R.color.e_food, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_fruit), R.drawable.e_fruit,
+                R.drawable.e_fruit_s, R.color.e_fruit, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_red_envelopes), R.drawable.e_red_envelopes,
+                R.drawable.e_red_envelopes_s, R.color.e_red_envelopes, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_snacks), R.drawable.e_snacks,
+                R.drawable.e_snacks_s, R.color.e_snacks, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_traffic), R.drawable.e_traffic,
+                R.drawable.e_traffic_s, R.color.e_traffic, false));
         accounting_gv.setAdapter(adapter_expenditure);
         adapter_expenditure.notifyDataSetChanged();
 
@@ -68,11 +81,14 @@ public class AccountingActivity extends AppCompatActivity {
     private GridView.OnItemClickListener mOnItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            if (old_position != -1)
+            if (old_position != position) {
+                accounting_expenditure_income_pll.setBackgroundColor(getResources().getColor(list_expenditure.get(position).getTextViewColor()));
+                accounting_expenditure_income_tv.setText(list_expenditure.get(position).getImageName());
                 list_expenditure.get(old_position).setIsSelected(false);
-            list_expenditure.get(position).setIsSelected(true);
-            old_position = position;
-            adapter_expenditure.notifyDataSetChanged();
+                list_expenditure.get(position).setIsSelected(true);
+                old_position = position;
+                adapter_expenditure.notifyDataSetChanged();
+            }
         }
     };
 
