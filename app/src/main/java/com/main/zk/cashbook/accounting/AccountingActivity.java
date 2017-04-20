@@ -11,6 +11,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.main.zk.cashbook.R;
+import com.main.zk.cashbook.db.DBHelper;
+import com.main.zk.cashbook.util.SharedPreferencesUtil;
+import com.main.zk.cashbook.util.SharedPreferencesUtil.Key;
+import com.main.zk.cashbook.util.TimeOpera;
 import com.zhy.android.percent.support.PercentLinearLayout;
 
 import java.util.ArrayList;
@@ -25,7 +29,8 @@ public class AccountingActivity extends AppCompatActivity {
     private AccountingActivityListAdapter adapter_expenditure;
     private ArrayList<AccountingActivityListInfo> list_expenditure;
     private int old_position = 0;
-
+    private DBHelper dbHelper;
+    private SharedPreferencesUtil spUtil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,8 @@ public class AccountingActivity extends AppCompatActivity {
     }
 
     private void init(){
+        dbHelper = DBHelper.getInstance(this);
+        spUtil = SharedPreferencesUtil.getInstance(this);
         accounting_back_btn = (ImageButton)findViewById(R.id.accounting_back_btn);
         accounting_ok_btn = (ImageButton)findViewById(R.id.accounting_ok_btn);
         accounting_expenditure_btn = (Button)findViewById(R.id.accounting_expenditure_btn);
@@ -59,8 +66,8 @@ public class AccountingActivity extends AppCompatActivity {
                 R.drawable.e_beauty_makeup_s, R.color.e_beauty_makeup, false));
         list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_buy_food), R.drawable.e_buy_food,
                 R.drawable.e_buy_food_s, R.color.e_buy_food, false));
-        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_daily_necessities),
-                R.drawable.e_daily_necessities, R.drawable.e_daily_necessities_s, R.color.e_daily_necessities, false));
+        list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_daily_necessities), R.drawable.e_daily_necessities,
+                R.drawable.e_daily_necessities_s, R.color.e_daily_necessities, false));
         list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_food), R.drawable.e_food,
                 R.drawable.e_food_s, R.color.e_food, false));
         list_expenditure.add(new AccountingActivityListInfo(getString(R.string.e_fruit), R.drawable.e_fruit,
@@ -75,19 +82,41 @@ public class AccountingActivity extends AppCompatActivity {
         adapter_expenditure.notifyDataSetChanged();
 
         accounting_gv.setOnItemClickListener(mOnItemClickListener);
+        accounting_ok_btn.setOnClickListener(mOnClickListener);
 
+        dbHelper.queryExpenseRecord();
     }
 
     private GridView.OnItemClickListener mOnItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             if (old_position != position) {
-                accounting_expenditure_income_pll.setBackgroundColor(getResources().getColor(list_expenditure.get(position).getTextViewColor()));
+                accounting_expenditure_income_pll.setBackgroundColor(getResources()
+                        .getColor(list_expenditure.get(position).getTextViewColor()));
                 accounting_expenditure_income_tv.setText(list_expenditure.get(position).getImageName());
                 list_expenditure.get(old_position).setIsSelected(false);
                 list_expenditure.get(position).setIsSelected(true);
                 old_position = position;
                 adapter_expenditure.notifyDataSetChanged();
+            }
+        }
+    };
+
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.accounting_ok_btn:
+                    dbHelper.insertExpenseRecord(spUtil.getString(Key.UserName.name(), ""),
+                            TimeOpera.getStringDateShort(),
+                            list_expenditure.get(old_position).getImageName(),
+                            list_expenditure.get(old_position).getImageViewSelectedSrc(),
+                            list_expenditure.get(old_position).getTextViewColor(),
+                            Integer.parseInt(accounting_expenditure_income_et.getText().toString()),
+                            "CASH", "ZK");
+                    break;
+                default:
+                    break;
             }
         }
     };

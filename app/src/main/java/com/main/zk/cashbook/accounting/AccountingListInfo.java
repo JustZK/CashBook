@@ -11,14 +11,19 @@ public class AccountingListInfo {
     private float mLave; //剩余（赚、亏）
     private float mIncome; //收入
     private float mExpenditure; //支出
+    private String mImageName;
+    private int mImageViewSelectedSrc;
 
-    public AccountingListInfo (boolean mShowButton,int mID, String mTime, float mLave, float mIncome, float mExpenditure){
+    public AccountingListInfo (boolean mShowButton,int mID, String mTime, float mLave, float mIncome, float mExpenditure,
+                               String mImageName, int mImageViewSelectedSrc){
         this.mShowButton = mShowButton;
         this.mID = mID;
         this.mTime = mTime;
         this.mLave = mLave;
         this.mIncome = mIncome;
         this.mExpenditure = mExpenditure;
+        this.mImageName = mImageName;
+        this.mImageViewSelectedSrc = mImageViewSelectedSrc;
     }
 
     public boolean isShowButton() {
@@ -67,5 +72,21 @@ public class AccountingListInfo {
 
     public void setExpenditure(float mExpenditure) {
         this.mExpenditure = mExpenditure;
+    }
+
+    public String getImageName() {
+        return mImageName;
+    }
+
+    public void setImageName(String mImageName) {
+        this.mImageName = mImageName;
+    }
+
+    public int getImageViewSelectedSrc() {
+        return mImageViewSelectedSrc;
+    }
+
+    public void setImageViewSelectedSrc(int mImageViewSelectedSrc) {
+        this.mImageViewSelectedSrc = mImageViewSelectedSrc;
     }
 }
