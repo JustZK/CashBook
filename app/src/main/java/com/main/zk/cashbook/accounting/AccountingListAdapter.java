@@ -103,7 +103,7 @@ public class AccountingListAdapter extends BaseAdapter {
             if (accountingListInfo.getIncome() > 0) {
                 viewHolder.accounting_item_expenditure.setVisibility(View.INVISIBLE);
                 viewHolder.accounting_item_income.setVisibility(View.VISIBLE);
-                viewHolder.accounting_item_status.setImageDrawable(mContext.getResources().getDrawable(R.drawable.income));
+                viewHolder.accounting_item_status.setImageDrawable(mContext.getResources().getDrawable(accountingListInfo.getImageViewSelectedSrc()));
                 viewHolder.accounting_item_income.setText(
                         mContext.getResources().getString(R.string.accounting_item_income) +
                                 accountingListInfo.getIncome());
@@ -111,7 +111,7 @@ public class AccountingListAdapter extends BaseAdapter {
             if (accountingListInfo.getExpenditure() > 0) {
                 viewHolder.accounting_item_expenditure.setVisibility(View.VISIBLE);
                 viewHolder.accounting_item_income.setVisibility(View.INVISIBLE);
-                viewHolder.accounting_item_status.setImageDrawable(mContext.getResources().getDrawable(R.drawable.expenditure));
+                viewHolder.accounting_item_status.setImageDrawable(mContext.getResources().getDrawable(accountingListInfo.getImageViewSelectedSrc()));
                 viewHolder.accounting_item_expenditure.setText(
                         mContext.getResources().getString(R.string.accounting_item_expenditure) +
                                 accountingListInfo.getExpenditure());

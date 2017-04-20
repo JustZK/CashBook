@@ -29,7 +29,7 @@
     <com.zhy.android.percent.support.PercentLinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="32%"
+        app:layout_heightPercent="28%"
         app:layout_widthPercent="100%"
         android:orientation="vertical"
         android:gravity="center">
@@ -37,43 +37,43 @@
         <com.zhy.android.percent.support.PercentRelativeLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:gravity="center|top"
             app:layout_heightPercent="100%"
-            app:layout_widthPercent="100%"
-            android:gravity="center|top">
+            app:layout_widthPercent="100%">
 
             <com.zhy.android.percent.support.PercentLinearLayout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_heightPercent="55%"
-                app:layout_widthPercent="100%"
+                android:layout_alignParentTop="true"
                 android:orientation="horizontal"
-                android:layout_alignParentTop="true">
+                app:layout_heightPercent="78%"
+                app:layout_widthPercent="100%">
 
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_heightPercent="100%"
-                    app:layout_widthPercent="50%"
+                    android:background="@drawable/frame_right"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:background="@drawable/frame_right">
+                    app:layout_heightPercent="100%"
+                    app:layout_widthPercent="50%">
 
                     <TextView
-                        android:paddingTop="15dp"
-                        android:paddingRight="20dp"
-                        android:gravity="center"
-                        android:text="本月收入"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingRight="40dp"
+                        android:text="本月收入" />
 
                     <TextView
-                        android:paddingRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="20dp"
+                        android:paddingRight="40dp"
                         android:text="10086"
                         android:textColor="@color/black"
-                        android:gravity="center"
-                        android:textSize="@dimen/xl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/xl" />
 
                 </com.zhy.android.percent.support.PercentLinearLayout>
 
@@ -81,42 +81,43 @@
                 <com.zhy.android.percent.support.PercentLinearLayout
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_heightPercent="100%"
-                    app:layout_widthPercent="50%"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    app:layout_heightPercent="100%"
+                    app:layout_widthPercent="50%">
 
                     <TextView
-                        android:paddingTop="15dp"
-                        android:paddingLeft="20dp"
-                        android:gravity="center"
-                        android:text="本月支出"
+
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="40dp"
+                        android:text="本月支出" />
 
                     <TextView
-                        android:paddingLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="40dp"
                         android:text="10010"
                         android:textColor="@color/black"
-                        android:gravity="center"
-                        android:textSize="@dimen/xl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="@dimen/xl" />
 
                 </com.zhy.android.percent.support.PercentLinearLayout>
 
             </com.zhy.android.percent.support.PercentLinearLayout>
 
             <ImageView
-                android:background="@color/white"
                 android:id="@+id/accounting_write_iv"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:srcCompat="@drawable/write"
-                app:layout_heightPercent="30%w"
-                app:layout_widthPercent="30%w"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                app:layout_heightPercent="26%w"
+                app:layout_widthPercent="26%w"
+                app:srcCompat="@drawable/write" />
         </com.zhy.android.percent.support.PercentRelativeLayout>
 
     </com.zhy.android.percent.support.PercentLinearLayout>
@@ -126,7 +127,7 @@
         android:divider="@null"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="60%"
+        app:layout_heightPercent="62%"
         app:layout_widthPercent="90%">
     </com.main.zk.cashbook.ui.PullRefreshListView>
 

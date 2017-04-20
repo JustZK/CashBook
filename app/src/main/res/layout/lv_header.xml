@@ -6,7 +6,7 @@
     android:background="@color/white">
 
     <ImageView
-        android:layout_width="1dp"
+        android:layout_width="0.1dp"
         android:layout_height="50dp"
         android:background="@color/black"/>
 

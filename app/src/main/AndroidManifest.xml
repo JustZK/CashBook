@@ -10,8 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity android:name=".user.LoginActivity">-->
-        <activity android:name=".accounting.AccountingActivity">
+        <activity android:name=".user.LoginActivity">
+        <!--<activity android:name=".accounting.AccountingActivity">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
             android:name=".user.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme" />
-        <!--<activity android:name=".accounting.AccountingActivity"></activity>-->
+        <activity android:name=".accounting.AccountingActivity"></activity>
     </application>
 
 </manifest>

@@ -33,7 +33,7 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="1dp"
+            android:layout_width="0.1dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@color/black"
@@ -48,10 +48,10 @@
 
         <ImageView
             android:id="@+id/accounting_item_status"
-            android:layout_width="25dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/income" />
+            android:src="@drawable/e_apparel_s" />
 
     </com.zhy.android.percent.support.PercentRelativeLayout>
 

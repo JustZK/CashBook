@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.main.zk.cashbook.R;
+import com.main.zk.cashbook.db.DBHelper;
 import com.main.zk.cashbook.ui.PullRefreshListView;
 import com.main.zk.cashbook.util.ToastUtil;
 
@@ -25,6 +26,7 @@ public class AccountingFragment extends Fragment {
     private PullRefreshListView accounting_lv;
     private ArrayList<AccountingListInfo> list;
     private AccountingListAdapter accountingListAdapter;
+    private DBHelper dbHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,21 +45,22 @@ public class AccountingFragment extends Fragment {
     }
 
     private void init(){
+        dbHelper = DBHelper.getInstance(getContext());
         accounting_write_iv = (ImageView) view.findViewById(R.id.accounting_write_iv);
         accounting_lv = (PullRefreshListView) view.findViewById(R.id.accounting_lv);
         animationDirection = (AnimationDrawable) getResources().getDrawable(R.drawable.animation_write);
         accounting_write_iv.setOnClickListener(mOnClickListener);
         accounting_lv.setonRefreshListener(mOnRefreshListener);
 
-        list = new ArrayList<>();
+        list = dbHelper.queryExpenseRecord();
         accountingListAdapter = new AccountingListAdapter(getContext(), list);
         accounting_lv.setAdapter(accountingListAdapter);
         accountingListAdapter.setOnClickEventListener(mOnClickEventListener);
 
-        list.add(new AccountingListInfo(false, -1, "今天", -55, -1, -1));
-        list.add(new AccountingListInfo(false, 0, null, -1, -1, 66));
-        list.add(new AccountingListInfo(false, 1, null, -1,-1, 77));
-        list.add(new AccountingListInfo(false, 2, null, -1,88, -1));
+//        list.add(new AccountingListInfo(false, -1, "今天", -55, -1, -1));
+//        list.add(new AccountingListInfo(false, 0, null, -1, -1, 66));
+//        list.add(new AccountingListInfo(false, 1, null, -1,-1, 77));
+//        list.add(new AccountingListInfo(false, 2, null, -1,88, -1));
         accountingListAdapter.notifyDataSetChanged();
     }
 
